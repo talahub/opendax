@@ -269,6 +269,24 @@ namespace :service do
 
     @switch.call(args, method(:start), method(:stop))
   end
+
+  desc 'Run Parity'
+  task :parity, [:command] do |task, args|
+    args.with_defaults(:command => 'start')
+
+    def start
+      puts '----- Starting the parity -----'
+      sh 'docker-compose up -d parity'
+    end
+
+    def stop
+      puts '----- Stopping the parity -----'
+      sh 'docker-compose rm -fs parity'
+    end
+
+    @switch.call(args, method(:start), method(:stop))
+  end
+
   desc 'Run the micro app with dependencies (does not run Optional)'
   task :all, [:command] => 'render:config' do |task, args|
     args.with_defaults(:command => 'start')
@@ -285,6 +303,7 @@ namespace :service do
       Rake::Task["service:tower"].invoke('start')
       Rake::Task["service:utils"].invoke('start')
       Rake::Task["service:daemons"].invoke('start')
+      Rake::Task["service:parity"].invoke('start')
     end
 
     def stop
@@ -297,6 +316,7 @@ namespace :service do
       Rake::Task["service:tower"].invoke('stop')
       Rake::Task["service:utils"].invoke('stop')
       Rake::Task["service:daemons"].invoke('stop')
+      Rake::Task["service:parity"].invoke('stop')
     end
 
     @switch.call(args, method(:start), method(:stop))
