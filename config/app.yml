@@ -1,8 +1,8 @@
 ---
 app:
-  name: OpenDAX
-  domain: app.local
-  subdomain: www
+  name: Astra
+  domain: astra.bar
+  subdomain: app
 render_protect: false
 csrfEnabled: false
 ssl:
@@ -14,6 +14,7 @@ images:
   frontend: quay.io/openware/baseapp:2.4.1 # Check on quay.io/openware/baseapp for latest tags
   tower: quay.io/openware/tower:2.4.9
   rango: quay.io/openware/rango:2.4.3
+  parity: parity/parity:v2.7.2-stable
 finex:
   enabled: false
   image: quay.io/openware/finex:2.4.0-5334683
