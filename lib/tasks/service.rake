@@ -303,7 +303,7 @@ namespace :service do
       Rake::Task["service:tower"].invoke('start')
       Rake::Task["service:utils"].invoke('start')
       Rake::Task["service:daemons"].invoke('start')
-      Rake::Task["service:parity"].invoke('start')
+      # Rake::Task["service:parity"].invoke('start')
     end
 
     def stop
@@ -316,7 +316,7 @@ namespace :service do
       Rake::Task["service:tower"].invoke('stop')
       Rake::Task["service:utils"].invoke('stop')
       Rake::Task["service:daemons"].invoke('stop')
-      Rake::Task["service:parity"].invoke('stop')
+      # Rake::Task["service:parity"].invoke('stop')
     end
 
     @switch.call(args, method(:start), method(:stop))

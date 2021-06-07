@@ -8,7 +8,6 @@ services:
       --chain=kovan
       --mode=active
       --interface=all
-      --warp=true
       --snapshot-peers=10
       --min-peers=5
       --max-peers=10
@@ -20,5 +19,3 @@ services:
       --no-persistent-txqueue
     ports:
 	    - "8545:8545"
-    volumes:
-      - /tmp/parity:/home/app/snap/parity/16707/.local/share/io.parity.ethereum
