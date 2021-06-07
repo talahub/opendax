@@ -8,6 +8,7 @@ services:
       --chain=kovan
       --mode=active
       --interface=all
+      --warp=true
       --snapshot-peers=10
       --min-peers=5
       --max-peers=10
@@ -17,5 +18,7 @@ services:
       --jsonrpc-apis=all
       --db-compaction=ssd
       --no-persistent-txqueue
+    volumes:
+      - ../data/parity:/home/parity/.local/share/io.parity.ethereum
     ports:
-	    - "8545:8545"
+      - "127.0.0.1:8545:8545"

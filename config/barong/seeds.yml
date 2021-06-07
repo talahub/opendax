@@ -6,13 +6,13 @@
 #
 # Note: email is the only required field here.
 users:
-  - email: admin@barong.io
-    password: 0lDHd9ufs9t@
+  - email: admin@astra.bar
+    password: Tiki@1234
     role: admin
     state: active
     level: 3
-  - email: john@barong.io
-    password: Am8icnzEI3d!
+  - email: test@astra.bar
+    password: Tiki@1234
     role: member
     state: active
     level: 3

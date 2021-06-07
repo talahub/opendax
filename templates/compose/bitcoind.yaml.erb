@@ -1,0 +1,12 @@
+version: '3.6'
+
+services:
+
+  bitcoind:
+    image: quay.io/openware/bitcoind:0.19.1
+    restart: always
+    user: root
+    command: bitcoind
+    volumes:
+      - ../data/bitcoin:/bitcoin
+      - ../config/bitcoin.conf:/bitcoin/.bitcoin/bitcoin.conf

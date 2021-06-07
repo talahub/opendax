@@ -1,7 +1,7 @@
 ---
 app:
   name: Astra
-  domain: astra.bar
+  domain: astra.local
   subdomain: app
 render_protect: false
 csrfEnabled: false
