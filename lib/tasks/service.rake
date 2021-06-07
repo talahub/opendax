@@ -276,7 +276,7 @@ namespace :service do
 
     def start
       puts '----- Starting the parity -----'
-      sh 'docker-compose up -d parity'
+      sh 'docker-compose up -Vd parity'
     end
 
     def stop
