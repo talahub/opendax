@@ -9,8 +9,8 @@ services:
       --mode=last
       --interface=all
       --snapshot-peers=10
-      --min-peers=25
-      --max-peers=50
+      --min-peers=10
+      --max-peers=20
       --jsonrpc-interface=0.0.0.0
       --jsonrpc-cors=all
       --jsonrpc-hosts=all
@@ -21,6 +21,7 @@ services:
       - ../data/parity:/home/parity/.local/share/io.parity.ethereum
     ports:
       - "8545:8545"
+      - "30303:30303"
 
   bitcoind:
     image: quay.io/openware/bitcoind:0.19.1
