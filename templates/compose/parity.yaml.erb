@@ -6,12 +6,11 @@ services:
     restart: always
     command: |
       --chain=kovan
-      --mode=active
+      --mode=last
       --interface=all
-      --warp=true
       --snapshot-peers=10
-      --min-peers=5
-      --max-peers=10
+      --min-peers=25
+      --max-peers=50
       --jsonrpc-interface=0.0.0.0
       --jsonrpc-cors=all
       --jsonrpc-hosts=all
