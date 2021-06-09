@@ -287,6 +287,25 @@ namespace :service do
     @switch.call(args, method(:start), method(:stop))
   end
 
+  desc 'Run Ethstats'
+  task :ethstats, [:command] do |task, args|
+    args.with_defaults(:command => 'start')
+
+    def start
+      puts '----- Starting the ethstats -----'
+      sh 'docker-compose up -Vd ethstats-agent'
+      sh 'docker-compose up -Vd ethstats-dashboard'
+    end
+
+    def stop
+      puts '----- Stopping the ethstats -----'
+      sh 'docker-compose rm -fs ethstats-agent'
+      sh 'docker-compose rm -fs ethstats-dashboard'
+    end
+
+    @switch.call(args, method(:start), method(:stop))
+  end
+
   desc 'Run the micro app with dependencies (does not run Optional)'
   task :all, [:command] => 'render:config' do |task, args|
     args.with_defaults(:command => 'start')

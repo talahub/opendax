@@ -1,0 +1,19 @@
+version: '3.6'
+
+services:
+  ethstats-agent: # Ethereum Network Intelligence API
+    image: swarmpit/ethstats-agent:latest
+    environment:
+      RPC_HOST: parity # name of watched ethereum service
+      RPC_PORT: 8545
+      LISTENING_PORT: 30303
+      INSTANCE_NAME: parity # name of this node in dashboard
+      WS_SERVER: http://ethstats-dashboard:3000 # dashboard url
+      WS_SECRET: s3cr3t
+      VERBOSITY: 2
+  ethstats-dashboard:
+    image: swarmpit/ethstats:latest
+    environment:
+      WS_SECRET: s3cr3t
+    ports:
+      - "3000:3000"
