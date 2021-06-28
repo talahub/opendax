@@ -9,6 +9,8 @@ services:
       - ../config/mysql:/etc/mysql/conf.d
     environment:
       MYSQL_ROOT_PASSWORD: <%= @config['database']['password'] %>
+    ports:
+      - "3306:3306"
 
   influxdb:
     image: influxdb:1.7.10
