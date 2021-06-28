@@ -5,12 +5,12 @@ services:
     image: parity/parity:v2.7.2-stable
     restart: always
     command: |
-      --chain=kovan
+      --chain=ropsten
       --mode=last
       --interface=all
       --snapshot-peers=10
-      --min-peers=10
-      --max-peers=20
+      --min-peers=5
+      --max-peers=10
       --jsonrpc-interface=0.0.0.0
       --jsonrpc-cors=all
       --jsonrpc-hosts=all
